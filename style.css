@@ -15,7 +15,7 @@ html {
 }
 
 body {
-    background-image: url(img/back.jpg);
+    background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(img/back.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -34,21 +34,54 @@ body {
     overflow: hidden;
     
     display: flex;
+    flex-wrap: wrap;
 }
 
-.player1-panel {
-    flex: 0 0 50%;
-}
-
-.player2-panel {
-    flex: 1;
+.start{
+    width: 100%;
+    margin-top: 4.5rem;
+    max-height: 2rem;
+    text-align: center;
+    
 }
 
 .player1-panel, .player2-panel {
     padding: 10rem;
+    width: 50%;
 }
 
 
 /**********************************************
 *** PLAYERS
 **********************************************/
+
+.btn-new {
+    width: 200px;
+    color: #555;
+    background: none;
+    border: none;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 2rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+i {
+    color: #eb4d4d;
+    display: inline-block;
+    margin-right: 1rem;
+    font-size: 3.2rem;
+    line-height: 1;
+    vertical-align: text-top;
+    margin-top: -4px;
+    transition: all .3s;
+}
+
+.btn-new:hover{
+    font-weight: 600;
+}
+.btn-new:hover i {
+      margin-right: 1.5rem;  
+}
