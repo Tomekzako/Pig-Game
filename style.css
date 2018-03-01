@@ -1,0 +1,54 @@
+/**********************************************
+*** GENERAL
+**********************************************/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-image: url(img/back.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    height: 100vh;
+    color: #555;
+}
+
+.flex-container {
+    max-width: 100rem;
+    height: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 1rem 5rem rgba(0,0,0,.3);
+    overflow: hidden;
+    
+    display: flex;
+}
+
+.player1-panel {
+    flex: 0 0 50%;
+}
+
+.player2-panel {
+    flex: 1;
+}
+
+.player1-panel, .player2-panel {
+    padding: 10rem;
+}
+
+
+/**********************************************
+*** PLAYERS
+**********************************************/
