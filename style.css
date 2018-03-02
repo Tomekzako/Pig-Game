@@ -103,8 +103,6 @@ body {
     right: 1rem;
 }
 
-
-
 button {
     width: 200px;
     color: #555;
@@ -129,6 +127,7 @@ button {
 .btn-roll {
     top: 40.3rem;
 }
+
 .btn-hold {
     top: 46.7rem;
 }
@@ -146,6 +145,10 @@ i {
 
 button:hover {
     font-weight: 600;
+}
+
+button:focus {
+    outline: none;
 }
 
 button:hover i {
