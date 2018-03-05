@@ -5,14 +5,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     scores = [0, 0];
     roundScore = 0;
-    activePlayer = 1;
+    activePlayer = 0;
 
     document.querySelector('.dice').style.display = 'none';
 
+    document.getElementById("current-0").textContent = '0';
     document.getElementById("current-1").textContent = '0';
-    document.getElementById("current-2").textContent = '0';
+    document.getElementById("score-0").textContent = '0';
     document.getElementById("score-1").textContent = '0';
-    document.getElementById("score-2").textContent = '0';
 
 
     document.querySelector('.btn-roll').addEventListener('click', function () {
@@ -28,15 +28,30 @@ document.addEventListener('DOMContentLoaded', function () {
             roundScore += dice;
             document.querySelector('#current-' + activePlayer).textContent = roundScore;
         } else {
-            activePlayer === 1 ? activePlayer = 2 : activePlayer = 1;
-            roundScore = 0;
-            document.getElementById("current-1").textContent = '0';
-            document.getElementById("current-2").textContent = '0';
-            
-            document.querySelector('.player1-panel').classList.toggle('active');
-            document.querySelector('.player2-panel').classList.toggle('active');
+            nextPlayer();
         }
 
     });
 
+    document.querySelector('.btn-hold').addEventListener('click', function () {
+
+        scores[activePlayer] += roundScore;
+        document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
+
+        nextPlayer();
+
+    });
+
+
+
+    function nextPlayer() {
+        activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
+        roundScore = 0;
+        document.getElementById("current-0").textContent = '0';
+        document.getElementById("current-1").textContent = '0';
+
+        document.querySelector('.player0-panel').classList.toggle('active');
+        document.querySelector('.player1-panel').classList.toggle('active');
+        document.querySelector('.dice').style.display = 'none';
+    }
 });

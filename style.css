@@ -38,8 +38,8 @@ body {
     align-content: flex-start;
 }
 
-.player1-panel,
-.player2-panel {
+.player0-panel,
+.player1-panel {
     padding: 10rem;
     width: 50%;
     text-align: center;
