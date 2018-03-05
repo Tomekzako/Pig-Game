@@ -38,8 +38,15 @@ document.addEventListener('DOMContentLoaded', function () {
         scores[activePlayer] += roundScore;
         document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
 
-        nextPlayer();
-
+        
+        if (scores[activePlayer] >= 10){
+            document.querySelector('#name-' + activePlayer).textContent = "WINNER!";
+            document.querySelector('.player' + activePlayer + '-panel').classList.add('winner');
+            document.querySelector('.player' + activePlayer + '-panel').classList.remove('active');
+            document.querySelector('.dice').style.display = 'none';
+        } else {
+            nextPlayer();    
+        }
     });
 
 
