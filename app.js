@@ -30,6 +30,11 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             activePlayer === 1 ? activePlayer = 2 : activePlayer = 1;
             roundScore = 0;
+            document.getElementById("current-1").textContent = '0';
+            document.getElementById("current-2").textContent = '0';
+            
+            document.querySelector('.player1-panel').classList.toggle('active');
+            document.querySelector('.player2-panel').classList.toggle('active');
         }
 
     });
