@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     init();
 
-
     document.querySelector('.btn-roll').addEventListener('click', function () {
 
         if (gameRunning) {
@@ -37,8 +36,15 @@ document.addEventListener('DOMContentLoaded', function () {
             scores[activePlayer] += roundScore;
             document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
 
-
-            if (scores[activePlayer] >= 100) {
+            var input = document.querySelector('.final-score').value;
+            var endGame;
+            if(input) {
+                endGame = input;
+            } else {
+                endGame = 100;
+            }
+            
+            if (scores[activePlayer] >= endGame) {
                 document.querySelector('#name-' + activePlayer).textContent = "WINNER!";
                 document.querySelector('.player' + activePlayer + '-panel').classList.add('winner');
                 document.querySelector('.player' + activePlayer + '-panel').classList.remove('active');
